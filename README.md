@@ -1,96 +1,109 @@
-# LaundryPlatform
+# Laundry Platform
 
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
+Monorepo for the Laundry Platform project. This repository contains the backend API and two Next.js frontends (admin and public web). It uses Nx for monorepo tooling and pnpm as the package manager.
 
-✨ Your new, shiny [Nx workspace](https://nx.dev) is ready ✨.
+## Contents
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/getting-started/intro#learn-nx?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+- `apps/api/` — NestJS backend (API server)
+- `apps/admin-web/` — Next.js admin interface
+- `apps/web/` — Next.js public website
 
-## Run tasks
+## Key technologies
 
-To run tasks with Nx use:
+- Node.js + TypeScript
+- NestJS for the API
+- Next.js for frontends
+- Nx for monorepo tooling
+- pnpm for package management
+- TailwindCSS, PostCSS for styling
 
-```sh
-npx nx <target> <project-name>
+## Quickstart
+
+Prerequisites:
+
+- Node.js (recommend v18+)
+- pnpm (v7+)
+
+Steps:
+
+1. Clone the repository
+
+```bash
+git clone <repo-url>
+cd laundry-platform
 ```
 
-For example:
+2. Install dependencies
 
-```sh
-npx nx build myproject
+```bash
+pnpm install
 ```
 
-These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
+3. Start services for development (examples using Nx)
 
-[More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+```bash
+# Run the API
+pnpm nx serve api
 
-## Add new projects
+# Run the admin frontend
+pnpm nx serve admin-web
 
-While you could add new projects to your workspace manually, you might want to leverage [Nx plugins](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) and their [code generation](https://nx.dev/features/generate-code?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) feature.
-
-To install a new plugin you can use the `nx add` command. Here's an example of adding the React plugin:
-```sh
-npx nx add @nx/react
+# Run the public website
+pnpm nx serve web
 ```
 
-Use the plugin's generator to create new projects. For example, to create a new React app or library:
+If you prefer, you can use `npx nx <command>` instead of `pnpm nx <command>`.
 
-```sh
-# Generate an app
-npx nx g @nx/react:app demo
+## Build
 
-# Generate a library
-npx nx g @nx/react:lib some-lib
+Build a specific app:
+
+```bash
+pnpm nx build api
+pnpm nx build admin-web
+pnpm nx build web
 ```
 
-You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx list <plugin-name>` to learn about more specific capabilities of a particular plugin. Alternatively, [install Nx Console](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) to browse plugins and generators in your IDE.
+## Testing
 
-[Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+Run tests (per-app):
 
-## Set up CI!
-
-### Step 1
-
-To connect to Nx Cloud, run the following command:
-
-```sh
-npx nx connect
+```bash
+pnpm nx test api
+pnpm nx test admin-web
+pnpm nx test web
 ```
 
-Connecting to Nx Cloud ensures a [fast and scalable CI](https://nx.dev/ci/intro/why-nx-cloud?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) pipeline. It includes features such as:
+## Environment variables
 
-- [Remote caching](https://nx.dev/ci/features/remote-cache?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task distribution across multiple machines](https://nx.dev/ci/features/distribute-task-execution?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Automated e2e test splitting](https://nx.dev/ci/features/split-e2e-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task flakiness detection and rerunning](https://nx.dev/ci/features/flaky-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+Each app may require environment variables. Look for `.env.example` or app-specific README files inside `apps/<app>/`. Create `.env` or `.env.local` as required before running.
 
-### Step 2
+## Development notes
 
-Use the following command to configure a CI workflow for your workspace:
+- The monorepo uses Nx; use `pnpm nx` (or `npx nx`) to run, build, test, and lint targets.
+- Linting and formatting are configured at the workspace level.
+- Keep shared code in `libs/` if/when you add it to the repository.
 
-```sh
-npx nx g ci-workflow
+## Contributing
+
+- Use feature branches named `feat/<short-description>` or `fix/<short-description>`.
+- Open pull requests against `main` and include a short description of the changes and testing steps.
+- Run linters and tests locally before opening a PR:
+
+```bash
+pnpm nx lint
+pnpm nx test
 ```
 
-[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+## License
 
-## Install Nx Console
+This project is licensed under the MIT License. See `package.json` for details.
 
-Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
+## Contact / Maintainers
 
-[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+If you join the project, please add yourself to the maintainers section here with an email or GitHub handle.
 
-## Useful links
+---
 
-Learn more:
+Notes: adjust the commands above if your local setup uses a different node version manager or if you prefer Docker-based development. See each app's `README.md` (if present) for app-specific setup.
 
-- [Learn more about this workspace setup](https://nx.dev/getting-started/intro#learn-nx?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects)
-- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-And join the Nx community:
-- [Discord](https://go.nx.dev/community)
-- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
-- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
-- [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
