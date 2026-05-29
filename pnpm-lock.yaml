@@ -36,6 +36,12 @@ importers:
         specifier: ^7.8.0
         version: 7.8.2
     devDependencies:
+      '@babel/core':
+        specifier: ^7.14.5
+        version: 7.29.7
+      '@babel/preset-react':
+        specifier: ^7.14.5
+        version: 7.29.7(@babel/core@7.29.7)
       '@eslint/js':
         specifier: ^10.0.1
         version: 10.0.1(eslint@9.39.4(jiti@2.7.0))
@@ -66,6 +72,9 @@ importers:
       '@nx/node':
         specifier: 22.7.5
         version: 22.7.5(@babel/traverse@7.29.7)(@swc-node/register@1.11.1(@swc/core@1.15.40(@swc/helpers@0.5.23))(@swc/types@0.1.26)(typescript@5.9.3))(@swc/core@1.15.40(@swc/helpers@0.5.23))(@types/node@20.19.9)(@zkochan/js-yaml@0.0.7)(babel-plugin-macros@3.1.0)(eslint@9.39.4(jiti@2.7.0))(nx@22.7.5(@swc-node/register@1.11.1(@swc/core@1.15.40(@swc/helpers@0.5.23))(@swc/types@0.1.26)(typescript@5.9.3))(@swc/core@1.15.40(@swc/helpers@0.5.23)))(typescript@5.9.3)
+      '@nx/react':
+        specifier: ^22.7.5
+        version: 22.7.5(36226c344b6eaab9a4d812574de995bd)
       '@nx/web':
         specifier: 22.7.5
         version: 22.7.5(18b40c1d440e96e94828483cdb5bae93)
