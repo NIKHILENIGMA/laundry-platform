@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "radix-nova",
+  "rsc": false,
+  "tsx": true,
+  "tailwind": {
+    "config": "",
+    "css": "libs/ui/src/styles/globals.css",
+    "baseColor": "neutral",
+    "cssVariables": true,
+    "prefix": ""
+  },
+  "aliases": {
+    "components": "@laundry-platform/ui/components",
+    "utils": "@laundry-platform/ui/lib/utils",
+    "ui": "@laundry-platform/ui/components",
+    "lib": "@laundry-platform/ui/lib",
+    "hooks": "@laundry-platform/ui/hooks"
+  },
+  "iconLibrary": "lucide"
+}

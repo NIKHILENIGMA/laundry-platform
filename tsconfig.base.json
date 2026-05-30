@@ -13,8 +13,18 @@
     "lib": ["es2020", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
+    "ignoreDeprecations": "6.0",
     "paths": {
-      "@laundry-platform/ui": ["./libs/ui/src/index.ts"]
+      "@laundry-platform/ui": ["./libs/ui/src/index.ts"],
+
+      "@laundry-platform/ui/components": ["./libs/ui/src/components"],
+      "@laundry-platform/ui/components/*": ["./libs/ui/src/components/*"],
+
+      "@laundry-platform/ui/lib": ["./libs/ui/src/lib"],
+      "@laundry-platform/ui/lib/*": ["./libs/ui/src/lib/*"],
+
+      "@laundry-platform/ui/hooks": ["./libs/ui/src/hooks"],
+      "@laundry-platform/ui/hooks/*": ["./libs/ui/src/hooks/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]

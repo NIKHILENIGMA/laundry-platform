@@ -45,6 +45,11 @@ export default [
               sourceTag: 'type:contract',
               onlyDependOnLibsWithTags: ['type:contract'],
             },
+            // UI can only import from other UI or contracts
+            {
+              sourceTag: 'type:ui',
+              onlyDependOnLibsWithTags: ['type:ui', 'type:contract'],
+            }
           ],
         },
       ],
