@@ -9,4 +9,25 @@ export default [
   {
     ignores: ['.next/**/*'],
   },
+  {
+    files: ['**/*.{ts,tsx,js,jsx}'],
+    rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            {
+              group: [
+                '@nestjs/*',
+                '@laundry-platform/api',
+                '@laundry-platform/api/*',
+              ],
+              message:
+                'Admin web code must not import backend NestJS/API modules. Expose shared shapes through contract libraries instead.',
+            },
+          ],
+        },
+      ],
+    },
+  },
 ];

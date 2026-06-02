@@ -7,6 +7,32 @@ export default [
   {
     files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
     // Override or add rules here
-    rules: {},
+    rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          paths: [
+            {
+              name: 'next',
+              message:
+                'Shared UI components must not depend on Next.js. Keep framework-specific code inside the app.',
+            },
+          ],
+          patterns: [
+            {
+              group: [
+                '@nestjs/*',
+                '@laundry-platform/api',
+                '@laundry-platform/api/*',
+                'next/*',
+                'node:*',
+              ],
+              message:
+                'Shared UI components must stay browser/UI-only and must not import backend, framework, or Node-only modules.',
+            },
+          ],
+        },
+      ],
+    },
   },
 ];

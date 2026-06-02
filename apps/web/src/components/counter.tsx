@@ -1,7 +1,8 @@
 'use client';
 
-import { Button } from '@laundry-platform/ui';
 import { useState } from 'react';
+
+import { Button } from '@laundry-platform/ui';
 
 const Counter = () => {
   const [count, setCount] = useState(0);
