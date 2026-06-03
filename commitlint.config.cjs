@@ -5,16 +5,7 @@ module.exports = {
     'scope-enum': [
       2,
       'always',
-      [
-        'web',
-        'admin-web',
-        'api',
-        'api-e2e',
-        'ui',
-        'repo',
-        'deps',
-        'config',
-      ],
+      ['web', 'admin-web', 'api', 'api-e2e', 'ui', 'repo', 'deps', 'config'],
     ],
   },
 }

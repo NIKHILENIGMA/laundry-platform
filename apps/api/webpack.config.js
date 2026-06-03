@@ -1,5 +1,6 @@
-const { NxAppWebpackPlugin } = require('@nx/webpack/app-plugin');
-const { join } = require('path');
+const { join } = require('path')
+
+const { NxAppWebpackPlugin } = require('@nx/webpack/app-plugin')
 
 module.exports = {
   output: {
@@ -22,4 +23,4 @@ module.exports = {
       sourceMap: true,
     }),
   ],
-};
+}
