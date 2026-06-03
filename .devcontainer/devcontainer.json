@@ -1,0 +1,53 @@
+{
+  "name": "Laundry Platform",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "postCreateCommand": "corepack enable && pnpm config set store-dir ~/.pnpm-store && pnpm install && pnpm prepare",
+  "forwardPorts": [3000, 4200, 4201, 9229],
+  "portsAttributes": {
+    "3000": {
+      "label": "API",
+      "onAutoForward": "notify"
+    },
+    "4200": {
+      "label": "Web",
+      "onAutoForward": "notify"
+    },
+    "4201": {
+      "label": "Admin Web",
+      "onAutoForward": "notify"
+    },
+    "9229": {
+      "label": "Node Inspector",
+      "onAutoForward": "silent"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "nrwl.angular-console",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "bradlc.vscode-tailwindcss",
+        "ms-azuretools.vscode-docker"
+      ],
+      "settings": {
+        "eslint.useFlatConfig": true,
+        "eslint.workingDirectories": [{ "mode": "auto" }],
+        "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": "explicit"
+        },
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  },
+  "remoteEnv": {
+    "NX_DAEMON": "false"
+  }
+}

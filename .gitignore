@@ -49,3 +49,6 @@ out
 
 # Local/private project knowledge
 AGENTS.private.md
+
+.pnpm-store
+.pnpm-store/
