@@ -1,4 +1,4 @@
-import Counter from '../components/counter';
+import Counter from '../components/counter'
 
 export default function Index() {
   return (
@@ -6,5 +6,5 @@ export default function Index() {
       <h1>Welcome to your new app!</h1>
       <Counter />
     </div>
-  );
+  )
 }

@@ -1,11 +1,11 @@
-'use client';
+'use client'
 
-import { useState } from 'react';
+import { useState } from 'react'
 
-import { Button } from '@laundry-platform/ui';
+import { Button } from '@laundry-platform/ui'
 
 const Counter = () => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
   return (
     <div className="flex flex-col items-center gap-4 ">
       <h1>Counter: {count}</h1>
@@ -18,7 +18,7 @@ const Counter = () => {
         </Button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Counter;
+export default Counter

@@ -1,4 +1,4 @@
-import baseConfig from '../../eslint.config.mjs';
+import baseConfig from '../../eslint.config.mjs'
 
 export default [
   ...baseConfig,
@@ -16,13 +16,11 @@ export default [
             },
             {
               name: 'react',
-              message:
-                'API code runs on Node/NestJS and must not depend on React.',
+              message: 'API code runs on Node/NestJS and must not depend on React.',
             },
             {
               name: 'react-dom',
-              message:
-                'API code runs on Node/NestJS and must not depend on React DOM.',
+              message: 'API code runs on Node/NestJS and must not depend on React DOM.',
             },
             {
               name: 'next',
@@ -32,13 +30,7 @@ export default [
           ],
           patterns: [
             {
-              group: [
-                '@laundry-platform/ui/*',
-                'next/*',
-                'lucide-react',
-                'radix-ui',
-                'radix-ui/*',
-              ],
+              group: ['@laundry-platform/ui/*', 'next/*', 'lucide-react', 'radix-ui', 'radix-ui/*'],
               message:
                 'API code must not import browser/UI packages. Keep backend code in Node/NestJS boundaries.',
             },
@@ -47,4 +39,4 @@ export default [
       ],
     },
   },
-];
+]

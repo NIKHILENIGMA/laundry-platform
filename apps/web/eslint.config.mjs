@@ -1,6 +1,6 @@
-import nextEslintPluginNext from '@next/eslint-plugin-next';
-import nx from '@nx/eslint-plugin';
-import baseConfig from '../../eslint.config.mjs';
+import nextEslintPluginNext from '@next/eslint-plugin-next'
+import nx from '@nx/eslint-plugin'
+import baseConfig from '../../eslint.config.mjs'
 
 export default [
   { plugins: { '@next/next': nextEslintPluginNext } },
@@ -17,11 +17,7 @@ export default [
         {
           patterns: [
             {
-              group: [
-                '@nestjs/*',
-                '@laundry-platform/api',
-                '@laundry-platform/api/*',
-              ],
+              group: ['@nestjs/*', '@laundry-platform/api', '@laundry-platform/api/*'],
               message:
                 'Web app code must not import backend NestJS/API modules. Expose shared shapes through contract libraries instead.',
             },
@@ -30,4 +26,4 @@ export default [
       ],
     },
   },
-];
+]

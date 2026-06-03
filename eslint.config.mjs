@@ -1,6 +1,6 @@
-import checkFile from 'eslint-plugin-check-file';
-import importPlugin from 'eslint-plugin-import';
-import nx from '@nx/eslint-plugin';
+import checkFile from 'eslint-plugin-check-file'
+import importPlugin from 'eslint-plugin-import'
+import nx from '@nx/eslint-plugin'
 
 export default [
   ...nx.configs['flat/base'],
@@ -28,15 +28,7 @@ export default [
       'import/order': [
         'error',
         {
-          groups: [
-            'builtin',
-            'external',
-            'internal',
-            'parent',
-            'sibling',
-            'index',
-            'type',
-          ],
+          groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'type'],
           pathGroups: [
             {
               pattern: '@laundry-platform/**',
@@ -130,13 +122,11 @@ export default [
             },
             {
               name: 'react',
-              message:
-                'API code runs on Node/NestJS and must not depend on React.',
+              message: 'API code runs on Node/NestJS and must not depend on React.',
             },
             {
               name: 'react-dom',
-              message:
-                'API code runs on Node/NestJS and must not depend on React DOM.',
+              message: 'API code runs on Node/NestJS and must not depend on React DOM.',
             },
             {
               name: 'next',
@@ -146,13 +136,7 @@ export default [
           ],
           patterns: [
             {
-              group: [
-                '@laundry-platform/ui/*',
-                'next/*',
-                'lucide-react',
-                'radix-ui',
-                'radix-ui/*',
-              ],
+              group: ['@laundry-platform/ui/*', 'next/*', 'lucide-react', 'radix-ui', 'radix-ui/*'],
               message:
                 'API code must not import browser/UI packages. Keep backend code in Node/NestJS boundaries.',
             },
@@ -173,11 +157,7 @@ export default [
         {
           patterns: [
             {
-              group: [
-                '@nestjs/*',
-                '@laundry-platform/api',
-                '@laundry-platform/api/*',
-              ],
+              group: ['@nestjs/*', '@laundry-platform/api', '@laundry-platform/api/*'],
               message:
                 'Browser/UI code must not import backend NestJS/API modules. Expose shared shapes through contract libraries instead.',
             },
@@ -206,4 +186,4 @@ export default [
       'no-console': 'off',
     },
   },
-];
+]
